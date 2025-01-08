@@ -22,6 +22,7 @@ public class TaskMatrixHandler(ITaskHandlerHelper taskHandlerHelper, IPrintFormS
                 {
                     numberOfCurrentRow++;
                     var currentRowContext = new RowTaskContext(numberOfCurrentRow);
+                    context.RowContexts[numberOfCurrentRow - 1] = currentRowContext;
                     var previousTasks = taskHandlerHelper.GetPreviousTask(numberOfCurrentRow, context);
 
                     currentRowContext.TaskCompletion = Task.Run(async () =>
@@ -51,6 +52,7 @@ public class TaskMatrixHandler(ITaskHandlerHelper taskHandlerHelper, IPrintFormS
                 {
                     numberOfCurrentRow++;
                     var currentRowContext = new RowTaskContext(numberOfCurrentRow);
+                    context.RowContexts[numberOfCurrentRow - 1] = currentRowContext;
                     var previousTasks = taskHandlerHelper.GetPreviousTask(numberOfCurrentRow, context);
 
                     currentRowContext.TaskCompletion = Task.Run(async () =>

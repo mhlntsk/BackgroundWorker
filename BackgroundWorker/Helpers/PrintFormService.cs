@@ -49,6 +49,6 @@ public class PrintFormService : IPrintFormService
 
     private async Task Delay(CancellationToken cancellationToken) // TODO in dev: ro remove.
     {
-        await Task.Delay(_random.Next(700, 1500), cancellationToken);
+        await Task.Delay(_random.Next(1000, 3000), cancellationToken);
     }
 }
